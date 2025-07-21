@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 02:00:00</entered_time>
+        <max_drift/>
+        <name>POR Viewer Group Manager</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="Dominik Howard">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2025-07-15 02:15:41</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[var grp = gs.getProperty('x_1118046_partne_0.por.viewers'); // viewers group
+var arrManagersDeptHeads = [];
+var arrExistingMembers = [];
+
+// function to remove duplicates from arrays
+function removeDuplicates(data) {
+    return data.filter((value, index) => data.indexOf(value) === index);
+}
+
+// get managers
+var grUser = new GlideRecord("sys_user");
+grUser.addActiveQuery();
+grUser.addNotNullQuery('manager');
+grUser.query();
+
+while (grUser.next()) {
+    arrManagersDeptHeads.push(grUser.manager.sys_id.toString());
+}
+
+// get department heads
+var grDept = new GlideRecord("cmn_department");
+grDept.addNotNullQuery('dept_head');
+grDept.query();
+
+while (grDept.next()) {
+    arrManagersDeptHeads.push(grDept.dept_head.sys_id.toString());
+}
+
+// remove duplicates from list of managers/deptHeads
+arrManagersDeptHeads = removeDuplicates(arrManagersDeptHeads);
+
+// get existing group members
+var grMembership = new GlideRecord("sys_user_grmember");
+grMembership.addQuery('group', grp);
+grMembership.query();
+
+while (grMembership.next()) {
+    // if existing member is not in manager/depthead list then remove from group
+    if (!arrManagersDeptHeads.includes(grMembership.user.sys_id.toString())) {
+		gs.info(grMembership.user.name + ' should be removed.');
+        grMembership.deleteRecord();
+    } else { // else push to existingMembers array
+		arrExistingMembers.push(grMembership.user.sys_id.toString());
+    }
+}
+
+//if manager/deptHead is NOT a member of the group already, then add them to the group
+for (var i = 0; i < arrManagersDeptHeads.length; i++) {
+    if (!arrExistingMembers.includes(arrManagersDeptHeads[i])) {
+        grMembership.initialize();
+        grMembership.group = grp;
+        grMembership.user = arrManagersDeptHeads[i];
+        grMembership.insert();
+    }
+}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-15 02:50:50</sys_created_on>
+        <sys_id>528f707c93be2650d5ec31697bba1083</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>POR Viewer Group Manager</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sysauto_script_528f707c93be2650d5ec31697bba1083</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-15 14:01:35</sys_updated_on>
+        <time_zone>US/Central</time_zone>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

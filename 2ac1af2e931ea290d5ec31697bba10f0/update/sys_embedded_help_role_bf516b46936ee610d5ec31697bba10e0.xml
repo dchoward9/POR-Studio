@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_1118046_partne_0.viewer" name="x_1118046_partne_0.viewer">0341e702936ee610d5ec31697bba1068</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-07 00:59:27</sys_created_on>
+        <sys_id>bf516b46936ee610d5ec31697bba10e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>0341e702936ee610d5ec31697bba1068</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_embedded_help_role_bf516b46936ee610d5ec31697bba10e0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-07 00:59:27</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

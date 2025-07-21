@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="parent_onboarding_request" label="Parent Onboarding Request" language="en" table="var__m_sys_hub_flow_input_4ffdeff693922690d5ec31697bba1000">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>parent_onboarding_request</element>
+            <help/>
+            <hint/>
+            <label>Parent Onboarding Request</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_input_4ffdeff693922690d5ec31697bba1000</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-06-26 23:34:20</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Parent Onboarding Request</sys_name>
+            <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_4ffdeff693922690d5ec31697bba1000_parent_onboarding_request_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-06-26 23:34:20</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="sensitive_data_access" label="Sensitive data access" language="en" table="x_1118046_partne_0_requests">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>sensitive_data_access</element>
+            <help/>
+            <hint/>
+            <label>Sensitive data access</label>
+            <language>en</language>
+            <name>x_1118046_partne_0_requests</name>
+            <plural>Sensitive data access</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-06-26 13:44:11</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Sensitive data access</sys_name>
+            <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+            <sys_update_name>sys_documentation_x_1118046_partne_0_requests_sensitive_data_access_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-06-26 13:44:11</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

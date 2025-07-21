@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=987000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>79f66b7e93522690d5ec31697bba1094</copied_from>
+        <copied_from_name>Partner Onboarding Task SF</copied_from_name>
+        <description>Create Task, manage Parent Task stages and states</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>2_partner_onboarding_task_sf</internal_name>
+        <label_cache>[{"name":"subflow.parent_onboarding_request","label":"Input➛Parent Onboarding Request","reference":"x_1118046_partne_0_requests","reference_display":"Requests","type":"reference","base_type":"reference","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["partner_onboarding_request"],"2e57d7d4-7d71-4539-b11d-f2e81c8f5e77":["record"],"6c216a80-109b-42b2-be9b-d5c97f2f5fd3":["record"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9f1512eb-917d-40db-b7b8-6de4bebd5f6d","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parent_onboarding_request.active","label":"Input➛Parent Onboarding Request➛Active","reference":"","reference_display":"Active","type":"boolean","base_type":"boolean","parent_table_name":"x_1118046_partne_0_requests","column_name":"active","usedInstances":{"928e9aa2-1b62-4b6e-b345-393a1b31f1af":["condition"]}},{"name":"subflow.short_description","label":"Input➛Short Description","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["short_description"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"22ed222b-bde2-4b83-abdb-0311352f0385","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.partner_full_legal_name","label":"Input➛Partner Full Legal Name","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["short_description","partner_full_legal_name"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"30003c0d-b9e6-46e8-8d40-6a98842042e6","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.requested_by","label":"Input➛Requested By","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["requested_by"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"bf72d24c-a6d3-4682-8502-2a110455f6b8","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.partner_contact_infomration","label":"Input➛Partner Contact Infomration","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["partner_contact_information"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"35ce0a0b-4f09-4337-bfb4-623e84e2d9e0","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.description_of_services","label":"Input➛Description of Services","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["description_of_services"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"cc04cec4-47a6-48b1-87e4-912bd60ee094","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.business_justification","label":"Input➛Business Justification","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["business_justification"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6ed82ed2-4267-4b01-becf-02ded67932cb","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.sensitive_data_access","label":"Input➛Sensitive Data Access","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["sensitive_data_access"]},"attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d5a3b01e-be57-4796-945c-ccfe61bb663e","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.stage","label":"Input➛Stage","reference":"","reference_display":"","type":"choice","base_type":"choice","column_name":"stage","choices":[{"label":"Waiting for Approval","value":"waiting_for_approval","order":0.0},{"label":"Negotiating Pricing","value":"negotiating_pricing","order":1.0},{"label":"Contract Redlining","value":"contract_redlining","order":2.0},{"label":"Security Review","value":"security_review","order":3.0},{"label":"Payment Setup","value":"payment_setup","order":4.0},{"label":"Completed","value":"completed","order":5.0},{"label":"Request Rejected","value":"request_rejected","order":6.0},{"label":"Closed Incomplete","value":"closed_incomplete","order":7.0}],"usedInstances":{"2e57d7d4-7d71-4539-b11d-f2e81c8f5e77":["stage"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"3a1ce881-b08a-4c3d-824d-f1ea80914557","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"373ac685-63a6-42d4-84a7-738cbe2644cf.Record.active","label":"3 - Create Task➛Tasks Record➛Active","reference":"","reference_display":"Active","type":"boolean","base_type":"boolean","parent_table_name":"x_1118046_partne_0_tasks","column_name":"active","usedInstances":{}},{"name":"373ac685-63a6-42d4-84a7-738cbe2644cf.Record.state","label":"3 - Create Task➛Tasks Record➛State","reference":"","reference_display":"State","type":"choice","base_type":"choice","parent_table_name":"x_1118046_partne_0_tasks","column_name":"state","choices":[{"used":false,"label":"Pending","image":"","reference":false,"rawLabel":"Pending","selected":false,"missing":false,"value":"-5","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"label":"Open","image":"","reference":false,"rawLabel":"Open","selected":false,"missing":false,"value":"1","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"label":"Work in Progress","image":"","reference":false,"rawLabel":"Work in Progress","selected":false,"missing":false,"value":"2","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"label":"Closed Complete","image":"","reference":false,"rawLabel":"Closed Complete","selected":false,"missing":false,"value":"3","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"label":"Closed Incomplete","image":"","reference":false,"rawLabel":"Closed Incomplete","selected":false,"missing":false,"value":"4","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"label":"Closed Skipped","image":"","reference":false,"rawLabel":"Closed Skipped","selected":false,"missing":false,"value":"7","parameters":{"name":"task","dependent_values":[""]}}],"usedInstances":{}},{"name":"subflow.assignment_group","label":"Input➛Assignment Group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["assignment_group"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ba6dab78-a163-440f-bce0-5e0116e077c3","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
+        <master_snapshot>4d635ceb93e6ae10d5ec31697bba10f0</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Partner Onboarding Task SF</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0c3318eb93e6ae10d5ec31697bba106e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Partner Onboarding Task SF</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_hub_flow_0c3318eb93e6ae10d5ec31697bba106e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-15 16:53:36</sys_updated_on>
+        <type>subflow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_variable_value action="delete_multiple" query="document_key=0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=0c3318eb93e6ae10d5ec31697bba106e^sys_idNOT INcc3318eb93e6ae10d5ec31697bba106f"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>0c3318eb93e6ae10d5ec31697bba106e</id>
+        <name>2 Partner Onboarding Task SF</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:31</sys_created_on>
+        <sys_id>cc3318eb93e6ae10d5ec31697bba106f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:49:31</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=cc3318eb93e6ae10d5ec31697bba106f"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=0c3318eb93e6ae10d5ec31697bba106e^sys_idNOT IN003318eb93e6ae10d5ec31697bba1090,0c3318eb93e6ae10d5ec31697bba1075,403318eb93e6ae10d5ec31697bba107b,443318eb93e6ae10d5ec31697bba107f"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=choice,uiTypeLabel=Choice,uiUniqueId=3a1ce881-b08a-4c3d-824d-f1ea80914557</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>3</choice>
+        <choice_field>stage</choice_field>
+        <choice_table>x_1118046_partne_0_requests</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>waiting_for_approval</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>stage</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Choice">choice</internal_type>
+        <label>Stage</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</model>
+        <model_id>0c3318eb93e6ae10d5ec31697bba106e</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:32</sys_created_on>
+        <sys_id>003318eb93e6ae10d5ec31697bba1090</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:05:58</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=003318eb93e6ae10d5ec31697bba1090"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=22ed222b-bde2-4b83-abdb-0311352f0385</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>short_description</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Short Description</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</model>
+        <model_id>0c3318eb93e6ae10d5ec31697bba106e</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:31</sys_created_on>
+        <sys_id>0c3318eb93e6ae10d5ec31697bba1075</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:49:31</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=0c3318eb93e6ae10d5ec31697bba1075"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=ba6dab78-a163-440f-bce0-5e0116e077c3</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>sys_user_group</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>assignment_group</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Assignment Group</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</model>
+        <model_id>0c3318eb93e6ae10d5ec31697bba106e</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sys_user_group">sys_user_group</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:31</sys_created_on>
+        <sys_id>403318eb93e6ae10d5ec31697bba107b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:49:31</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=403318eb93e6ae10d5ec31697bba107b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=9f1512eb-917d-40db-b7b8-6de4bebd5f6d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_1118046_partne_0_requests</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>parent_onboarding_request</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Parent Onboarding Request</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</model>
+        <model_id>0c3318eb93e6ae10d5ec31697bba106e</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_1118046_partne_0_requests">x_1118046_partne_0_requests</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:31</sys_created_on>
+        <sys_id>443318eb93e6ae10d5ec31697bba107f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:49:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=443318eb93e6ae10d5ec31697bba107f"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=0c3318eb93e6ae10d5ec31697bba106e^sys_idNOT IN903318eb93e6ae10d5ec31697bba10ad,943318eb93e6ae10d5ec31697bba10ae,9c3318eb93e6ae10d5ec31697bba10ae"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment>Update Request Stage for visibility</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>928e9aa2-1b62-4b6e-b345-393a1b31f1af</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:32</sys_created_on>
+        <sys_id>903318eb93e6ae10d5ec31697bba10ad</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:06:33</sys_updated_on>
+        <ui_id>2e57d7d4-7d71-4539-b11d-f2e81c8f5e77</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTWvjMBT8K0FnY+w4DWluS0NgodtCuuTSLUa2nhOBLLuSnCYb8t/3yZYdk4Y2hV7C+qb3Ic08zVjPe8IZmZIRsCC8DcdpFEbRMAiGk1GYjKMkHLKIAoTEI5LmgJUK0kIxXG+oqGxgv9dVkonizS+pAmniQiYFVYzLVazgtQJtDgesZ1yXgu6Wrg0j6ZoLhi1k+vziEezGEwwoMt2fpC6FKGgCAksXLcZTzGZX2jUr0iq3UHkbvHedM5cZ/JxhBpssnDDwCGwNSAYIJKNCg0dyKhk1hdqRqVEVBhRQ9ijFrqtYc2kaojndav4XTx4Fti4DZJa6IXTL2A2oCWczaugT7pyaSnXzKngKupkJg4xWwtz1Y03BY2l4IZsWQxPRdheiyuVDMxHSbdC7j0ojCCgtT4u8oZU9rYu3RQtyzmU9EkdRFCkV3Yoao3hSGQtnT0BAPeOclqXVQqmKDa+bEUrurwQufKsbPFPzlfRpanH7OFXqzzE+q8NLqrgl8Qu3weaDR/RO3wmq9ZEKzjB+rSyShpijENdTqEcQ10qwzanipfmBR23AAT94zgTJzUcKS2+PgurteTTCNg7DcBKMxjFK2UiIg1b/+r38F8fM12xwAcjWBr/ryz8P2jnhXey+3zt4aBLOBzff5oPJNfnA0bh6I3wm/2D44Q+2p6Ra8bonfW3oCv5UQRCx43NQB8/9+j+p/pofLkDd+mHOQTB9hkZrBsgRpoG4oXViCJccLF2yexy+zRXhOKi/K/LGf/NGvPwD98PLEyoJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Task">2b3a6335531003003bf1d9109ec58759</action_type>
+        <action_type_parent display_value="Create Task">3f9b1ff1531003003bf1d9109ec58775</action_type_parent>
+        <attributes/>
+        <comment>Create Task</comment>
+        <compiled_snapshot>2b3a6335531003003bf1d9109ec58759</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>928e9aa2-1b62-4b6e-b345-393a1b31f1af</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:32</sys_created_on>
+        <sys_id>943318eb93e6ae10d5ec31697bba10ae</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:06:33</sys_updated_on>
+        <ui_id>373ac685-63a6-42d4-84a7-738cbe2644cf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VVwVLbMBD9FUbnTGoTkkBuHZicWpgpHXqg4Fnb60RTWTKSHEgz/veuLDtJHRpC2wPM+KLdp9Xbp6f17YrxlE0YjgcwGgyGw0EYBAP64ixMz8LgDJPh6XiYsB6TkCMhLZgfkYVYIMUWIEoXfIrCMDwNTkZRAdpKjILI4QxBUm4KAcubl5HJnItUo2ST27seozQdaFGzyaqTOpSxgBgFQb82bJ/rwC4LH6NlVAN87NP23qNLn1A6dXyCHsMnizJFIpKBMNhjOcgUrNJLNrG6pIBGSK+kWK4Rcy4tFWQO+2T4Tzr2NHC4DKmzBH1uvYwa4Xw4uwAL11Q5saVuoMlc8QSN1yTFDEphz7djHnBVWK6k3+K79ruVKHN56SVh6wLtPVGkNEQCC9enY960kV3P1eOXluWUy1qSJilUAmK9Ams1j0vr+KxYDFSvJeDugI5AgTkVj3IoCi5nUaHVgtcFiV/enwla9DOhHomI4TPZh8Q10yepoT+l+EUdvgHNXeHPVIY2Vz1mluZcgDGb/kjY6KF07Hy3TV+Rl8ZtSTQv7Ec6YIFNC1WveR7He802ijfmyjiKNKrfhdl6IN7smk6LFejU9arxgTD2e0nl0tXKlLFrtE9IT6sLrKp7M1faOilqqiREd/MOoKqO7kkG0qjWeaZVWXQ3dfNVtfts3x3/1w2TA+63HSZTd8FHN+0FP3/t7VTBnES06BPdydIkfa3NdAn3T5cmcsh4GQ2D4D1NGD84/3rAvJVhsvV/eWGsZNk+243HG389Ardb4yTcfaFOvFf7/gACre+/eQa/82l8HislEGTX4MTow9Q1vDH38X8z98l7cva//jvfirX/ZOi7X47jf1pICgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment>Update Request Stage to Closed Incomplete</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>7704d16d-8b3a-47d5-9afe-70f9b346a965</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:32</sys_created_on>
+        <sys_id>9c3318eb93e6ae10d5ec31697bba10ae</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:06:33</sys_updated_on>
+        <ui_id>6c216a80-109b-42b2-be9b-d5c97f2f5fd3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTW/iMBT8K5XPUZQARZTbqghppW4r0RWXbjdy4gdYcuzUHxQW8d/3OXEAQdUFqRe0ufk9jz3zMpO8bAhnZEh6wJL0Lu0X3bTb7SRJZ9BL8343TzusSwFSEhFJS8CdGgqlGa6XVDhf2GyMy2dCvccV1SBtpmSuqGZczjMNbw6M3W5xP+OmEnQ9DTCsFAsuGELI8OU1IojGGyxoMtwctc6lKGgOArdOWo7HnO268mumCld6qrwtPgTkKHRuvo+wgyBPJ00iAisLkgESmVFhICIllYxapddkaLXDggbKnqRY73YsuLSN0JKuDP+DN/cSv28GqKwIQ9gtszCgpjwbUUuf8eTCOr2bl+IFmGYmDGbUCXt/WGs2PFWWK9lALM1Fi1bClfKxmQjZHXDwPpxBElB5nZ55I2v2vFDvk5bkmMt6JEGiUAUVuxW1VvPcWU9nQ0BAPeOSVpX3QqXVktdgpFLGc4GL2PsG7zR8LmNaeN4xTpXGY6yP6vKUau5F/MBjELyNiFmbe0GN2UvBGWZvzjNphAUJWT2FegRZ7QQPLjSv7De8agmB+DYKIchvP3NYcbc31MGZ+yCssjRNB0mvn6GVrYQsaf1vTu0/2Xcui8EZJNsY/Kxf/sekQxJOag+H2JvHphFycPtlORhcUw6CjKsPwr/sn3Q+/cAeOKl2vDmwvrF0Dr9cknRZIZQBlnGJ2iqBRv6NTRuavdMgXAK9LCln6GmTMuYgmPlAYBsTQEJIJWsEH0UlNG+mobn7bXxZXtJ+Uj9XlJr/5u/x+hcPA6qhRAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=0c3318eb93e6ae10d5ec31697bba106e^sys_idNOT IN103318eb93e6ae10d5ec31697bba10ab,543318eb93e6ae10d5ec31697bba10aa,543318eb93e6ae10d5ec31697bba10ac,d03318eb93e6ae10d5ec31697bba10a9"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">37d92f7293922690d5ec31697bba1025</block>
+        <comment>Delay so subsequent approvals/tasks aren't created</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Wait for a duration of time">fdb2541473031300b61e66476bf6a70e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>7704d16d-8b3a-47d5-9afe-70f9b346a965</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:32</sys_created_on>
+        <sys_id>103318eb93e6ae10d5ec31697bba10ab</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:05:58</sys_updated_on>
+        <ui_id>366c0174-9c6e-4b22-bb7b-cc7083059703</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YWY+bMBD+K4jnNMUQYJO3qttKfeihbrQvVYWMPSRWHaDG7DZd7X+vbQxhE5K9sr2lSIlnzJzfDDO5cotalrWs5sWLqmKL3J19+jxyWa5p6veVm+MVuDOX1gJLVuSJXJfgjtwLzGtNh28lZ4TJpL2geJRVJcfrc3vllb3i9K6QJeNUgFVXYqG0SBDu7GqLpdUlHKfAlaSXy4IRrZ1RdZpM4yA8QZM48AIUeF4aIYiiSRylWYTjk1Ddax88tZqdeWP9HqfM10xZYNUUgmqbkOeNlKMScgpKcYZ5BSN3hXOKZSHWHUUApu9zviEsWS6VPFdf/lax70r4xNP3MlAOEmh43TGxgWvIjRVNElo/hkJ5KBPWAe96tJHxEbhiX8CQDGF5AzJQX8YHEARyiReDUsqOOyDHv1ZZpZDhmsuXx3MRHcFF/0guBtrFJn3vS8OauYGGF065zTkpeL3K3zUwdLuAnB+qqubK6e3FVVfKKig1XDX+LBizs2Vx+bHF2muWG1stkxcE8+6EpRQsraVOzZULHFZKULLCZcnyRVKK4oKZh5Ubq/GCq8M448WlUqpbyBgTbchYVQcev1b0U0M+x4LpALxVYtTD1wb4ydda621CYC1OTMD0hYoIVsoXROfLGqdTZKu3lwPJViAS07USpRb0uZet3Z704BZ0qqQ/nzfiTRdKM0QjFKE0DiJfdaFgQiIC0RQAITz1vV4X6kHKGOwYgx1tsGMtvrNrtlWZ4Bt6YhlP0LOMrPs0rQ719wL9n4JclfgqaaBpfTPKj4DoJteb5D8NhN/kEhaNHxrAJ14QBN6UhEHcAZhSgCyLU+QDGgTwBqoDNltssk7Pf0z+6ZgceAWiaew985D6OJ430x9/F6S+cwakyGn18Ia70WzgChmahGTf1JfCwNS3DdaeMzfb6O5E8Asnv/+AfQxgd8a8pFBqddZ6EMaZNKZsgbYlH2NJoQRPkBfugasf9eA6NzOB2J5dnZ7hd3dxzyoT/DarTBvk7VwMrSwpZIXovw07Qjf9H14qblGG7qXMf/R43+FucKRvuVt1LEX9O5ZxayFZJ4dWrN41C80N6G6r+Ztr+oMbwE9eDFDmh3Rv5cfBgcrfXQju4NNtG8HkL3iXPbIGhl85o3+uNiqyBFrzJ6qELjNtJWRpGKqhbU8lRP7NkU0lwJFLcLKCq8jqU8/cfW7YuImeagv78IiwD/ybsCervG/EUAmcbdj/wlj30PHts0ZiI6lqIEWBsEopnGvam/b/aM1YKxAw0iddFuKLNnVDu/4BW0wXS9kWAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">efd92f7293922690d5ec31697bba1023</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>928e9aa2-1b62-4b6e-b345-393a1b31f1af</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:32</sys_created_on>
+        <sys_id>543318eb93e6ae10d5ec31697bba10aa</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:05:58</sys_updated_on>
+        <ui_id>7704d16d-8b3a-47d5-9afe-70f9b346a965</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTW/bMAz9K5nPjuGvOGluxYYCA7YVaItetsKgJToRKkueJSfNgvz3Uf5IgzXFim3H3axHinyPfPLe062tW2vu9KUxYqW85dcH3xPKYfS99xRU6C09phUXVmiVd4DvbUC2LmDBPE62YCZK2wmT2iCfMF3VEq1L48LUEnb3b8tmayF5gwOLGhrqZbHxlvtfQnZXYy6hQElFb20j1IquC06nMoQyumARS+IsicMwXqRRkSVFFPMEEBLKGy++H0VNPnWI/6pa149wM3bSDXe0otD38Mmi4kitS5AGfa8CxcHqZndEGgR+reQzsBbKUjnPJT8Z8YNqx7OZSyyRNDLsg8djPoyxh9laC4bXtSPYIxYKOdxhWraV+tLrcAvAElppxwUQ0hqqh7Uj7VgMlMrbtd7ejA2vhOoEDkGpGcjjCSyNoWgtGrcYlFhRobyCuqbh5HWjN6K7TFyqYCXpEJRSb6mpc1gAzBEPaEYQXBH+oYPvoRFOxWcqQ5d7mgUYwfLOjc48DUk4dGPJv7eOUC9wkJL306AEwxpR20vqs8GB9cF/aeUTF+/3yTwBli1m0yyBbJrGPJ0uUphP58mCFRhnacrK4AYZbT4wFiweDu++tWGY8OSlzf+23L94BxcwK2dRODv/DtLs3Ds48wJeN3/8G/O7db3R+2EY/jf/qfmFyXsTD9q65n/s/Qdn9L6D6X3DkQlDRO4c9nH827vAjgwg2Cm01c2jk/CMHX4CA4LCWzcGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">7bd92f7293922690d5ec31697bba1026</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>7704d16d-8b3a-47d5-9afe-70f9b346a965</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:32</sys_created_on>
+        <sys_id>543318eb93e6ae10d5ec31697bba10ac</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:05:58</sys_updated_on>
+        <ui_id>03d2b5a5-142f-4456-b6d3-a63d01eb1874</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">fef767fe93522690d5ec31697bba1084</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:32</sys_created_on>
+        <sys_id>d03318eb93e6ae10d5ec31697bba10a9</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:05:58</sys_updated_on>
+        <ui_id>928e9aa2-1b62-4b6e-b345-393a1b31f1af</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2UX2vbMBTFv0rQszH+04Q1b2WjMNhWaEtftmKuJTkRkyVXkpNmId9991p2G9Z0G2WPe4vOle495/pH9sz2oeuDv7UX3quVYcuv9wlThjT8vWcGWsmWjFsjVFDWVIOQsA3ongrX8qGXPsyUnwEPakM1oXynYXf3myt8rbRwcpzXgcOuQTq23P9SCrtOVhpqqbHTTXDKrPC5EnhqMmjyc57zsliURZYV787yelHWeSFKkFDivenh+8n+7NOgJK/monmo+2mSdYJs5VnC5GOQRkgc3YD2MmEtGAHBut2T4iSIK6OfhbUyAdsxuvzo1Q/sXczndLGRmJHLWHw6VuPuoszXVnF51ZHBqASo9fiGW9235kvMQVuXDfQ6TFtHpffYT3ZkmlyMlpqbtd1eTwMvlRkCjkVtOeinEwRcQ90H6enDSC1bbFS10HW4nKpzdqOGx+ilTVcaD2mj7RaHEkspfW1rUtwRpJeofxjkO3CKUnzGNvg42qzBK14N3GG74DDCYVhL9dCToRhwjFLFbeAFz53qwkWkKro+JC+hPeJ1v/d9TSZThC72qi04QYFcBDWNlB4O3/osK8Vg5gXUb+7zL8g/h3kzz7P5afLPFqfIP8H867gXf8Cdsvwl7VmW/cf9GHflq4jtmG0Y/mba7wntOMFHboTkyqORW9I+Tv/kVNghAIofS1vrvlOEZ+3wE5lK4eQTBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>short_description</element>
+        <help/>
+        <hint/>
+        <label>Short Description</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:31</sys_created_on>
+        <sys_id>0c3318eb93e6ae10d5ec31697bba1079</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Short Description</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e_short_description_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:49:31</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>stage</element>
+        <help/>
+        <hint/>
+        <label>Stage</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:32</sys_created_on>
+        <sys_id>183318eb93e6ae10d5ec31697bba1097</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Stage</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e_stage_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:49:32</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>assignment_group</element>
+        <help/>
+        <hint/>
+        <label>Assignment Group</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:31</sys_created_on>
+        <sys_id>443318eb93e6ae10d5ec31697bba107e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Assignment Group</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e_assignment_group_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:49:31</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>parent_onboarding_request</element>
+        <help/>
+        <hint/>
+        <label>Parent Onboarding Request</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:49:32</sys_created_on>
+        <sys_id>483318eb93e6ae10d5ec31697bba1082</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Parent Onboarding Request</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e_parent_onboarding_request_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:49:32</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1219112000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>79f66b7e93522690d5ec31697bba1094</copied_from>
+        <copied_from_name/>
+        <description>Create Task, manage Parent Task stages and states</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>partner_onboarding_task_sf</internal_name>
+        <label_cache>[{"name":"subflow.parent_onboarding_request","label":"Input➛Parent Onboarding Request","reference":"x_1118046_partne_0_requests","reference_display":"Requests","type":"reference","base_type":"reference","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["partner_onboarding_request"],"2e57d7d4-7d71-4539-b11d-f2e81c8f5e77":["record"],"6c216a80-109b-42b2-be9b-d5c97f2f5fd3":["record"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9f1512eb-917d-40db-b7b8-6de4bebd5f6d","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.parent_onboarding_request.active","label":"Input➛Parent Onboarding Request➛Active","reference":"","reference_display":"Active","type":"boolean","base_type":"boolean","parent_table_name":"x_1118046_partne_0_requests","column_name":"active","usedInstances":{"928e9aa2-1b62-4b6e-b345-393a1b31f1af":["condition"]}},{"name":"subflow.short_description","label":"Input➛Short Description","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["short_description"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"22ed222b-bde2-4b83-abdb-0311352f0385","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.partner_full_legal_name","label":"Input➛Partner Full Legal Name","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["short_description","partner_full_legal_name"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"30003c0d-b9e6-46e8-8d40-6a98842042e6","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.requested_by","label":"Input➛Requested By","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["requested_by"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"bf72d24c-a6d3-4682-8502-2a110455f6b8","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.partner_contact_infomration","label":"Input➛Partner Contact Infomration","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["partner_contact_information"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"35ce0a0b-4f09-4337-bfb4-623e84e2d9e0","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.description_of_services","label":"Input➛Description of Services","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["description_of_services"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"cc04cec4-47a6-48b1-87e4-912bd60ee094","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.business_justification","label":"Input➛Business Justification","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["business_justification"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6ed82ed2-4267-4b01-becf-02ded67932cb","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.sensitive_data_access","label":"Input➛Sensitive Data Access","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["sensitive_data_access"]},"attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d5a3b01e-be57-4796-945c-ccfe61bb663e","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.stage","label":"Input➛Stage","reference":"","reference_display":"","type":"choice","base_type":"choice","column_name":"stage","choices":[{"label":"Waiting for Approval","value":"waiting_for_approval","order":0.0},{"label":"Negotiating Pricing","value":"negotiating_pricing","order":1.0},{"label":"Contract Redlining","value":"contract_redlining","order":2.0},{"label":"Security Review","value":"security_review","order":3.0},{"label":"Payment Setup","value":"payment_setup","order":4.0},{"label":"Completed","value":"completed","order":5.0},{"label":"Request Rejected","value":"request_rejected","order":6.0},{"label":"Closed Incomplete","value":"closed_incomplete","order":7.0}],"usedInstances":{"2e57d7d4-7d71-4539-b11d-f2e81c8f5e77":["stage"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"3a1ce881-b08a-4c3d-824d-f1ea80914557","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"373ac685-63a6-42d4-84a7-738cbe2644cf.Record.active","label":"3 - Create Task➛Tasks Record➛Active","reference":"","reference_display":"Active","type":"boolean","base_type":"boolean","parent_table_name":"x_1118046_partne_0_tasks","column_name":"active","usedInstances":{}},{"name":"373ac685-63a6-42d4-84a7-738cbe2644cf.Record.state","label":"3 - Create Task➛Tasks Record➛State","reference":"","reference_display":"State","type":"choice","base_type":"choice","parent_table_name":"x_1118046_partne_0_tasks","column_name":"state","choices":[{"used":false,"label":"Pending","image":"","reference":false,"rawLabel":"Pending","selected":false,"missing":false,"value":"-5","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"label":"Open","image":"","reference":false,"rawLabel":"Open","selected":false,"missing":false,"value":"1","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"label":"Work in Progress","image":"","reference":false,"rawLabel":"Work in Progress","selected":false,"missing":false,"value":"2","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"label":"Closed Complete","image":"","reference":false,"rawLabel":"Closed Complete","selected":false,"missing":false,"value":"3","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"label":"Closed Incomplete","image":"","reference":false,"rawLabel":"Closed Incomplete","selected":false,"missing":false,"value":"4","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"label":"Closed Skipped","image":"","reference":false,"rawLabel":"Closed Skipped","selected":false,"missing":false,"value":"7","parameters":{"name":"task","dependent_values":[""]}}],"usedInstances":{}},{"name":"subflow.assignment_group","label":"Input➛Assignment Group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","column_name":"","usedInstances":{"373ac685-63a6-42d4-84a7-738cbe2644cf":["assignment_group"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ba6dab78-a163-440f-bce0-5e0116e077c3","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
+        <master>true</master>
+        <name>Partner Onboarding Task SF</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4d635ceb93e6ae10d5ec31697bba10f0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:06:02</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=4d635ceb93e6ae10d5ec31697bba10f0"/>
+    <sys_variable_value action="delete_multiple" query="document_key=4d635ceb93e6ae10d5ec31697bba10f0"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=4d635ceb93e6ae10d5ec31697bba10f0"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=4d635ceb93e6ae10d5ec31697bba10f0^sys_idNOT INcd635ceb93e6ae10d5ec31697bba10f1"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>4d635ceb93e6ae10d5ec31697bba10f0</id>
+        <name>Partner Onboarding Task SF</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:24</sys_created_on>
+        <sys_id>cd635ceb93e6ae10d5ec31697bba10f1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:50:24</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=cd635ceb93e6ae10d5ec31697bba10f1"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=4d635ceb93e6ae10d5ec31697bba10f0^sys_idNOT IN05635ceb93e6ae10d5ec31697bba10ff,8d635ceb93e6ae10d5ec31697bba10f2,c9639ceb93e6ae10d5ec31697bba1015,c9639ceb93e6ae10d5ec31697bba1038"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=ba6dab78-a163-440f-bce0-5e0116e077c3</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>sys_user_group</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>assignment_group</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Assignment Group</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Partner Onboarding Task SF">4d635ceb93e6ae10d5ec31697bba10f0</model>
+        <model_id>4d635ceb93e6ae10d5ec31697bba10f0</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sys_user_group">sys_user_group</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:24</sys_created_on>
+        <sys_id>05635ceb93e6ae10d5ec31697bba10ff</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:50:24</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=05635ceb93e6ae10d5ec31697bba10ff"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=22ed222b-bde2-4b83-abdb-0311352f0385</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>short_description</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Short Description</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Partner Onboarding Task SF">4d635ceb93e6ae10d5ec31697bba10f0</model>
+        <model_id>4d635ceb93e6ae10d5ec31697bba10f0</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:24</sys_created_on>
+        <sys_id>8d635ceb93e6ae10d5ec31697bba10f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:50:24</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=8d635ceb93e6ae10d5ec31697bba10f2"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=9f1512eb-917d-40db-b7b8-6de4bebd5f6d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_1118046_partne_0_requests</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>parent_onboarding_request</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Parent Onboarding Request</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Partner Onboarding Task SF">4d635ceb93e6ae10d5ec31697bba10f0</model>
+        <model_id>4d635ceb93e6ae10d5ec31697bba10f0</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_1118046_partne_0_requests">x_1118046_partne_0_requests</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+        <sys_id>c9639ceb93e6ae10d5ec31697bba1015</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:50:25</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c9639ceb93e6ae10d5ec31697bba1015"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=choice,uiTypeLabel=Choice,uiUniqueId=3a1ce881-b08a-4c3d-824d-f1ea80914557</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>3</choice>
+        <choice_field>stage</choice_field>
+        <choice_table>x_1118046_partne_0_requests</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>waiting_for_approval</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>stage</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Choice">choice</internal_type>
+        <label>Stage</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Partner Onboarding Task SF">4d635ceb93e6ae10d5ec31697bba10f0</model>
+        <model_id>4d635ceb93e6ae10d5ec31697bba10f0</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+        <sys_id>c9639ceb93e6ae10d5ec31697bba1038</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:06:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c9639ceb93e6ae10d5ec31697bba1038"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=4d635ceb93e6ae10d5ec31697bba10f0"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4d635ceb93e6ae10d5ec31697bba10f0"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=4d635ceb93e6ae10d5ec31697bba10f0"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=4d635ceb93e6ae10d5ec31697bba10f0^sys_idNOT IN15639ceb93e6ae10d5ec31697bba1062,1d639ceb93e6ae10d5ec31697bba1061,5d639ceb93e6ae10d5ec31697bba1060"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment>Update Request Stage to Closed Incomplete</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">4d635ceb93e6ae10d5ec31697bba10f0</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>7704d16d-8b3a-47d5-9afe-70f9b346a965</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+        <sys_id>15639ceb93e6ae10d5ec31697bba1062</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:50:25</sys_updated_on>
+        <ui_id>6c216a80-109b-42b2-be9b-d5c97f2f5fd3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTW/iMBT8K5XPUZQARZTbqghppW4r0RWXbjdy4gdYcuzUHxQW8d/3OXEAQdUFqRe0ufk9jz3zMpO8bAhnZEh6wJL0Lu0X3bTb7SRJZ9BL8343TzusSwFSEhFJS8CdGgqlGa6XVDhf2GyMy2dCvccV1SBtpmSuqGZczjMNbw6M3W5xP+OmEnQ9DTCsFAsuGELI8OU1IojGGyxoMtwctc6lKGgOArdOWo7HnO268mumCld6qrwtPgTkKHRuvo+wgyBPJ00iAisLkgESmVFhICIllYxapddkaLXDggbKnqRY73YsuLSN0JKuDP+DN/cSv28GqKwIQ9gtszCgpjwbUUuf8eTCOr2bl+IFmGYmDGbUCXt/WGs2PFWWK9lALM1Fi1bClfKxmQjZHXDwPpxBElB5nZ55I2v2vFDvk5bkmMt6JEGiUAUVuxW1VvPcWU9nQ0BAPeOSVpX3QqXVktdgpFLGc4GL2PsG7zR8LmNaeN4xTpXGY6yP6vKUau5F/MBjELyNiFmbe0GN2UvBGWZvzjNphAUJWT2FegRZ7QQPLjSv7De8agmB+DYKIchvP3NYcbc31MGZ+yCssjRNB0mvn6GVrYQsaf1vTu0/2Xcui8EZJNsY/Kxf/sekQxJOag+H2JvHphFycPtlORhcUw6CjKsPwr/sn3Q+/cAeOKl2vDmwvrF0Dr9cknRZIZQBlnGJ2iqBRv6NTRuavdMgXAK9LCln6GmTMuYgmPlAYBsTQEJIJWsEH0UlNG+mobn7bXxZXtJ+Uj9XlJr/5u/x+hcPA6qhRAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Task">2b3a6335531003003bf1d9109ec58759</action_type>
+        <action_type_parent display_value="Create Task">3f9b1ff1531003003bf1d9109ec58775</action_type_parent>
+        <attributes/>
+        <comment>Create Task</comment>
+        <compiled_snapshot>2b3a6335531003003bf1d9109ec58759</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">4d635ceb93e6ae10d5ec31697bba10f0</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>928e9aa2-1b62-4b6e-b345-393a1b31f1af</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+        <sys_id>1d639ceb93e6ae10d5ec31697bba1061</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:06:02</sys_updated_on>
+        <ui_id>373ac685-63a6-42d4-84a7-738cbe2644cf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VVwVLbMBD9FUbnTGoTkkBuHZicWpgpHXqg4Fnb60RTWTKSHEgz/veuLDtJHRpC2wPM+KLdp9Xbp6f17YrxlE0YjgcwGgyGw0EYBAP64ixMz8LgDJPh6XiYsB6TkCMhLZgfkYVYIMUWIEoXfIrCMDwNTkZRAdpKjILI4QxBUm4KAcubl5HJnItUo2ST27seozQdaFGzyaqTOpSxgBgFQb82bJ/rwC4LH6NlVAN87NP23qNLn1A6dXyCHsMnizJFIpKBMNhjOcgUrNJLNrG6pIBGSK+kWK4Rcy4tFWQO+2T4Tzr2NHC4DKmzBH1uvYwa4Xw4uwAL11Q5saVuoMlc8QSN1yTFDEphz7djHnBVWK6k3+K79ruVKHN56SVh6wLtPVGkNEQCC9enY960kV3P1eOXluWUy1qSJilUAmK9Ams1j0vr+KxYDFSvJeDugI5AgTkVj3IoCi5nUaHVgtcFiV/enwla9DOhHomI4TPZh8Q10yepoT+l+EUdvgHNXeHPVIY2Vz1mluZcgDGb/kjY6KF07Hy3TV+Rl8ZtSTQv7Ec6YIFNC1WveR7He802ijfmyjiKNKrfhdl6IN7smk6LFejU9arxgTD2e0nl0tXKlLFrtE9IT6sLrKp7M1faOilqqiREd/MOoKqO7kkG0qjWeaZVWXQ3dfNVtfts3x3/1w2TA+63HSZTd8FHN+0FP3/t7VTBnES06BPdydIkfa3NdAn3T5cmcsh4GQ2D4D1NGD84/3rAvJVhsvV/eWGsZNk+243HG389Ardb4yTcfaFOvFf7/gACre+/eQa/82l8HislEGTX4MTow9Q1vDH38X8z98l7cva//jvfirX/ZOi7X47jf1pICgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment>Update Request Stage for visibility</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">4d635ceb93e6ae10d5ec31697bba10f0</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>928e9aa2-1b62-4b6e-b345-393a1b31f1af</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+        <sys_id>5d639ceb93e6ae10d5ec31697bba1060</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:50:25</sys_updated_on>
+        <ui_id>2e57d7d4-7d71-4539-b11d-f2e81c8f5e77</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTWvjMBT8K0FnY+w4DWluS0NgodtCuuTSLUa2nhOBLLuSnCYb8t/3yZYdk4Y2hV7C+qb3Ic08zVjPe8IZmZIRsCC8DcdpFEbRMAiGk1GYjKMkHLKIAoTEI5LmgJUK0kIxXG+oqGxgv9dVkonizS+pAmniQiYFVYzLVazgtQJtDgesZ1yXgu6Wrg0j6ZoLhi1k+vziEezGEwwoMt2fpC6FKGgCAksXLcZTzGZX2jUr0iq3UHkbvHedM5cZ/JxhBpssnDDwCGwNSAYIJKNCg0dyKhk1hdqRqVEVBhRQ9ijFrqtYc2kaojndav4XTx4Fti4DZJa6IXTL2A2oCWczaugT7pyaSnXzKngKupkJg4xWwtz1Y03BY2l4IZsWQxPRdheiyuVDMxHSbdC7j0ojCCgtT4u8oZU9rYu3RQtyzmU9EkdRFCkV3Yoao3hSGQtnT0BAPeOclqXVQqmKDa+bEUrurwQufKsbPFPzlfRpanH7OFXqzzE+q8NLqrgl8Qu3weaDR/RO3wmq9ZEKzjB+rSyShpijENdTqEcQ10qwzanipfmBR23AAT94zgTJzUcKS2+PgurteTTCNg7DcBKMxjFK2UiIg1b/+r38F8fM12xwAcjWBr/ryz8P2jnhXey+3zt4aBLOBzff5oPJNfnA0bh6I3wm/2D44Q+2p6Ra8bonfW3oCv5UQRCx43NQB8/9+j+p/pofLkDd+mHOQTB9hkZrBsgRpoG4oXViCJccLF2yexy+zRXhOKi/K/LGf/NGvPwD98PLEyoJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=4d635ceb93e6ae10d5ec31697bba10f0"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=4d635ceb93e6ae10d5ec31697bba10f0^sys_idNOT IN11639ceb93e6ae10d5ec31697bba105e,11639ceb93e6ae10d5ec31697bba1060,9d639ceb93e6ae10d5ec31697bba105c,d9639ceb93e6ae10d5ec31697bba105e"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">efd92f7293922690d5ec31697bba1023</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">4d635ceb93e6ae10d5ec31697bba10f0</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>928e9aa2-1b62-4b6e-b345-393a1b31f1af</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+        <sys_id>11639ceb93e6ae10d5ec31697bba105e</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:06:02</sys_updated_on>
+        <ui_id>7704d16d-8b3a-47d5-9afe-70f9b346a965</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW/aMBT9K8zPIQpJCJS3iqrSpG6V2qovWxXd2A5YdezMdqAM8d93nYQPrUxr1T3uDZ/7dc7NPWJLdOPqxtkHfWmtWCgy+/YUEKE8hr+3REHFyYxQrZhwQqu8BQKyAtn4gAP7PFiDHSjtBlRqy9mA6qqW3Pk0JmwtYfP4tmy6FJIZ3rOoweAsxw2ZbX8LCYbNygjK0QUd0STOkjiK4mk6KrKkGMUsAQ4JNpRQcImp8z39wU2LBH/U5Ta1x60zQi36903f5X4PasM8q1EUEP7iuGIc+ZQgLQ9IBYqB02ZzQAwHdqvkEVgK5bAd8ckvVvzEgfF47BNLjhIp74KHZ95vsYPLK3CAVBrqGtOn0qUWlNtuOYyX0Eg3P8W6hNvaS+1KHBRyX61lU6mv3UbIocH+oyHSWCTBa6/UU+91lPdLvb7bs7wWqt1KH5Sagjy8wOHuisZ5PlvCJa+wUV5BXeNG89rolWiLkUsVLiQ+wlLqNQ71VxkC9cRDXCyE14hftfAjGOFVfME2WNzRLMAKmrcX7A/OoIRdQOzGziVYexSJ281/NJ5iJ7kXl3f78SXUiNpd4uQV73XsgteGOPHCdptMEqDZdDzMEsiGaczS4TSFyXCSTGnB4yxNaRnecYoHFFoHju92n743UZSw5LVZPtrufW66gHE5HkXj825Ks3NuOuOjd1oo/ouF/Pd7o4OiKPpvoQ9bSNi8O/xeWzv8Hzroydulm3nYNRUWqT147PP+n8cHNnhcgp5Ca22evagjtvsF3Ckuo8MGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">7bd92f7293922690d5ec31697bba1026</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">4d635ceb93e6ae10d5ec31697bba10f0</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>7704d16d-8b3a-47d5-9afe-70f9b346a965</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+        <sys_id>11639ceb93e6ae10d5ec31697bba1060</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:06:02</sys_updated_on>
+        <ui_id>03d2b5a5-142f-4456-b6d3-a63d01eb1874</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">fef767fe93522690d5ec31697bba1084</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">4d635ceb93e6ae10d5ec31697bba10f0</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+        <sys_id>9d639ceb93e6ae10d5ec31697bba105c</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:06:01</sys_updated_on>
+        <ui_id>928e9aa2-1b62-4b6e-b345-393a1b31f1af</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnQZCs2GhyCxwEKJA2QBLk0gbCiqRsohSp8GHHFfzvXYqSbTTuI22PvZmzy+XMaAfuiPau9c4+6EtrxVKRi09PCREqYPi7IwoaTi4I1YoJJ7QqeyAha5A+FO74s+fWTYSdAHViHWpM2FbC9vEnLXQlJDN8eK8Fg1MdN+Si+64kGE6oM6jzc5rTYjovplk2fXeWV/OiyqesAA4FDpRQcYmti5Ho5KZHkh8qcNs24NYZoZbD+WaYcj+C2rDAKs8Swl8cV4wjnxqk5QlpQDFw2mz3iOHAbpU8ACuhHI4jofnFiq/44HQ2C401R4mUx+L+WA7WRbi+AgdIxVPnzdBKV1pQbqM5jNfgpVscY7Hhtg1S4xUHlRxva+kb9TE6QvYDxi+FiLdIgrdBaaA+6KjvV3pzN7K8Fqp3ZShKTUHuT+DQu8q7wKcjXPIGB5UNtC06WrZGr0V/Gbk06VLiIa2l3uCjYf/SsCFapWgspNeIX/XwIxgRVHzAMXg50qzAClr2u4rj0CZOdgmxW7uQYO1BJLpbPvtAMUoexJXRn3CFGtG6y7ibUccueb36R1vfddZXgXaKqxtnVRoMCxJNXPc07vpu99lnWcF6eq+i8cdz3pafc5jVszybnc7P2fxUfk4k542hmf4iNEHKb2Ymy7L/ofnr0AhbxlUftPWP/8PMPIWAxDf3XlNhkdpDwN6P/yqhsMXlEvQY2mjzJYg6YLtvVaa15Z8GAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">37d92f7293922690d5ec31697bba1025</block>
+        <comment>Delay so subsequent approvals/tasks aren't created</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Partner Onboarding Task SF">4d635ceb93e6ae10d5ec31697bba10f0</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Wait for a duration of time">fdb2541473031300b61e66476bf6a70e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>7704d16d-8b3a-47d5-9afe-70f9b346a965</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+        <sys_id>d9639ceb93e6ae10d5ec31697bba105e</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:06:02</sys_updated_on>
+        <ui_id>366c0174-9c6e-4b22-bb7b-cc7083059703</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1ZbW/iOBD+K1E+c1ycQCh8W7VXaaW921NB/bJaRY4zAWtNknWcdrmq//3GifMCBLbs0hUrVUJqPXbGz8w8z8SGJzstVFaofJG+y3O+TOzZp88Dmyfahv8/2Qldgz2zo0JSxdMkUJsM7IH9QEWh7fAtE5xxFdQLcC7ieSbo5t4s+csssTpL2IqLSILZLqMSd1Eg7dnTzhSP0MNoOvHGV2Q08RyPeI4T+gR8fzTxw9ink6sxOhQ0BIFLb8we1qLCeQB++WeGe6Wc1eMPxsV1bUxlpCERxxlgnAqSCBBNTEUOA3tNk4iqVG4aiwQafUxEa1jxRKE/Wy/+lvP/cMeRo9fFgPExqOaaYWDyVpnjG6roXMmCqUKapRXcqi51wH3ZPVYcE5TzPGh93IHA6Qfo8yHNXI8P0vXxL0gGiaLLXi9ZM9vjx33GQkcQ00Ko6/OFSM4QonumED0dYlW+j1k5NbM9zTsairq4qSjWyT8VX+0mIffHhFYtufm+3oocUUGmKaw5aQgaz1fp413Nv1uelFjNpEgZFc2IKiV5WChdmicbBKzRUbCmWcaTZZDJ9IGXD2MY6+FS4GAYi/QRN9VdZUiZBjJExdDhLdpvSvM9lVwn4G90gw8/D+x8k18LmudtGlAewddCI6mSYmIIyhSWjzDJM/WO6QoauLpoRvidqii+BhmUrS1AIKDHnfrtN66T+1QYk8gnPgknnu9in/JGzGfgTwEIoVPX6fSpDpdKXFaJy9K4LAPsxRGYZlZmvbQHnYm6q2E7gT8Xlf0VGlvp6xydra8V7GvnJOn8LvxHFuVBRWcTW7n5q+iiolLLrfMK4crxPM+ZsrE3aYQQRQBxPAmJC6RXCC3le8AZjiPxYFmmqsvt9431jdlvzC7J0/OCJtOJ84dD8GM5zkx/3H2qu9YcWJpE+cmch5iMxuzQITWEnkPqLuM7oLd7+rb9w76b+rhygUfVN9r/QtrvHWWDFIHo4neEQGNVgtuhfm0+jfYRoyPijA/Q3vU7tF+UBx25exK3OhBfHswpNzjvAmXRXivqvO+Wp++mFkKcyu7LujE0l57jd6nvbEZO2sz96VtNQ8Xem0w9uyN2TOklar1GyDbBsZtlZ5nhcEvE0xvD9hcbP9wlXuc+RGJ3HB3sDRPvSG/Yvwe9APqPXoRGF9gffslr8yeV1P92G7wpDNOygqgQZ9ZTHI7HeMg8oCff3T5iYuYttQIrTgWmVI86qA6hNQlrGbwtnruO3YhnfEbxeO62eNg66YLrE9K8nb4AQZ1+Do3nQCVb3XIQusRlXX63r9s+a5ZXvptMM54jhIW2va9/TdATG4yQs67pMZVfNPjW9vw/hgXuiJcYAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=4d635ceb93e6ae10d5ec31697bba10f0"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=4d635ceb93e6ae10d5ec31697bba10f0"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>assignment_group</element>
+        <help/>
+        <hint/>
+        <label>Assignment Group</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:24</sys_created_on>
+        <sys_id>41639ceb93e6ae10d5ec31697bba1013</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Assignment Group</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0_assignment_group_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:50:24</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>parent_onboarding_request</element>
+        <help/>
+        <hint/>
+        <label>Parent Onboarding Request</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+        <sys_id>41639ceb93e6ae10d5ec31697bba1036</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Parent Onboarding Request</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0_parent_onboarding_request_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:50:25</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>short_description</element>
+        <help/>
+        <hint/>
+        <label>Short Description</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:24</sys_created_on>
+        <sys_id>89635ceb93e6ae10d5ec31697bba10fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Short Description</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0_short_description_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:50:24</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>stage</element>
+        <help/>
+        <hint/>
+        <label>Stage</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+        <sys_id>dd639ceb93e6ae10d5ec31697bba1054</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Stage</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0_stage_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 01:50:25</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0^sys_idNOT IN33fb20b793aeee10d5ec31697bba1027,37fb20b793aeee10d5ec31697bba1025,3bfb20b793aeee10d5ec31697bba1023,3ffb20b793aeee10d5ec31697bba1021,b3fb20b793aeee10d5ec31697bba1026,b7fb20b793aeee10d5ec31697bba1024,bbfb20b793aeee10d5ec31697bba1022,bffb20b793aeee10d5ec31697bba1020"/>
+    <sys_choice field="stage" table="var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Closed Incomplete</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+            <sequence>8</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>33fb20b793aeee10d5ec31697bba1027</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-11 02:06:01</sys_updated_on>
+            <value>closed_incomplete</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Completed</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>37fb20b793aeee10d5ec31697bba1025</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-11 02:06:01</sys_updated_on>
+            <value>completed</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Security Review</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3bfb20b793aeee10d5ec31697bba1023</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-11 02:06:01</sys_updated_on>
+            <value>security_review</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Negotiating Pricing</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3ffb20b793aeee10d5ec31697bba1021</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-11 02:06:01</sys_updated_on>
+            <value>negotiating_pricing</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Request Rejected</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+            <sequence>7</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b3fb20b793aeee10d5ec31697bba1026</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-11 02:06:01</sys_updated_on>
+            <value>request_rejected</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Payment Setup</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b7fb20b793aeee10d5ec31697bba1024</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-11 02:06:01</sys_updated_on>
+            <value>payment_setup</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Contract Redlining</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bbfb20b793aeee10d5ec31697bba1022</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-11 02:06:01</sys_updated_on>
+            <value>contract_redlining</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Waiting for Approval</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_input_4d635ceb93e6ae10d5ec31697bba10f0</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-11 01:50:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bffb20b793aeee10d5ec31697bba1020</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-11 02:06:01</sys_updated_on>
+            <value>waiting_for_approval</value>
+        </sys_choice>
+    </sys_choice>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_4d635ceb93e6ae10d5ec31697bba10f0"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>0c3318eb93e6ae10d5ec31697bba106e</sys_id>
+        <latest_snapshot>4d635ceb93e6ae10d5ec31697bba10f0</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch3-04-17-2025_04-30-2025_1345.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=0c3318eb93e6ae10d5ec31697bba106e"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=0c3318eb93e6ae10d5ec31697bba106e^sys_idNOT IN11639ceb93e6ae10d5ec31697bba1071"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"11639ceb93e6ae10d5ec31697bba1071","name":"plan","plan_signature":null}}</plan>
+        <plan_id display_value="Partner Onboarding Task SF">0c3318eb93e6ae10d5ec31697bba106e</plan_id>
+        <snapshot>84526a5193bee650d5ec31697bba1065</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 01:50:26</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>11639ceb93e6ae10d5ec31697bba1071</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 02:06:02</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>

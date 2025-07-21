@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>true</action_insert>
+        <action_update>true</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
+        <collection>x_1118046_partne_0_requests</collection>
+        <condition table="x_1118046_partne_0_requests">approvalCHANGESTOapproved^universal_requestISEMPTY^EQ<item display_value="Approved" endquery="false" field="approval" goto="false" newquery="false" operator="CHANGESTO" or="false" value="approved"/>
+            <item endquery="false" field="universal_request" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <content_type>text/html</content_type>
+        <default_interval/>
+        <description/>
+        <digest_from/>
+        <digest_html/>
+        <digest_reply_to/>
+        <digest_separator_html><![CDATA[<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
+        <digest_subject/>
+        <digest_template/>
+        <digest_text/>
+        <digestable>false</digestable>
+        <enable_dynamic_translation>false</enable_dynamic_translation>
+        <event_name>activate.life.cycle.migration</event_name>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>engine</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<div style="font-family: lato,arial,sans; line-height: 24px;">
+<div style="text-align: center; padding-bottom: 24px; line-height: 36px; border-bottom: 1px solid #DADDE2;"><span style="font-size: 18pt;">Your partner onboarding request was approved</span></div>
+<div style="font-size: 12pt; padding-top: 24px; padding-bottom: 16px;">${mail_script:request_greetings}</div>
+<div style="font-size: 12pt; padding-bottom: 16px;"><span style="font-weight: 600;">${number}</span> was approved, and we'll proceed with completing your request.</div>
+<div style="font-size: 12pt; padding-bottom: 16px;">You can view your request to track updates and request changes.<br><br></div>
+<div style="font-size: 12pt; padding-bottom: 16px;">${mail_script:about_the_request}<br>Partner full legal name: <strong>${partner_full_legal_name}</strong><br>Partner contact information: <strong>${partner_contact_information}</strong><br>Description of services: <strong>${description_of_services}</strong><br>Business justification: <strong>${business_justification}</strong><br>Sensitive data access: <strong>${sensitive_data_access}</strong></div>
+<div style="font-size: 12pt; padding-bottom: 8px;">Thank you,<br>Onboarding Team</div>
+</div>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>POR request approved</name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields>opened_by,requested_for</recipient_fields>
+        <recipient_groups/>
+        <recipient_users/>
+        <reply_to/>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject>${number} was Approved</subject>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-08 00:37:26</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b6e568a293e66a10d5ec31697bba10cc</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>POR request approved</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sysevent_email_action_b6e568a293e66a10d5ec31697bba10cc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-08 22:07:10</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template display_value="Employee notification template">1462e7ca918a3010f877b1d70a4d6a3d</template>
+        <type>email</type>
+        <weight>0</weight>
+    </sysevent_email_action>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>b6e568a293e66a10d5ec31697bba10cc</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-08 22:07:39</sys_created_on>
+        <sys_id>ee3d4dfa936eaa10d5ec31697bba1083</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-08 22:07:39</sys_updated_on>
+        <table>sysevent_email_action</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_email_template">
+    <sysevent_email_template action="INSERT_OR_UPDATE">
+        <collection>x_1118046_partne_0_tasks</collection>
+        <email_layout/>
+        <message/>
+        <message_html><![CDATA[<p>Short Description: ${short_description}<br>Assignment group: ${assignment_group}<br>Click here to view Task: ${mail_script:itsm_record_link}</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Partner Task Email</name>
+        <sms_alternate/>
+        <subject>Task ${number} notification</subject>
+        <sys_class_name>sysevent_email_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-26 17:44:29</sys_created_on>
+        <sys_id>a39d92ba93dae290d5ec31697bba1090</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Partner Task Email</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sysevent_email_template_a39d92ba93dae290d5ec31697bba1090</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-26 17:55:04</sys_updated_on>
+        <sys_version>2</sys_version>
+    </sysevent_email_template>
+</record_update>

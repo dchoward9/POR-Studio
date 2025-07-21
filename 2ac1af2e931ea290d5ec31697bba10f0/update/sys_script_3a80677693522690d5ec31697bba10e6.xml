@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1118046_partne_0_requests</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1118046_partne_0_requests">stageVALCHANGES^EQ<item display_value="-- None --" endquery="false" field="stage" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Update Comments by Stage</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    var stage = current.stage;
+    var stageName = current.stage.getDisplayValue();
+	//var managerName = current.manager.getDisplayValue();
+
+    switch (String(stage)) {
+		// add a default
+        case 'waiting_for_approval': // the value can be the same as the display value
+            current.comments = 'This request is awaiting manager approval.';
+            break;
+        case "negotiating_pricing":
+            current.comments = 'This request was approved and has moved to the following stage: ' + stageName;
+            break;
+        case "contract_redlining":
+		case "security_review":
+		case "payment_setup":
+            current.comments = 'This request has moved to the following stage: ' + stageName;
+            break;
+        case "completed":
+            current.comments = 'This request has completed successfully.';
+            break;
+        case "request_rejected":
+            // current.comments = 'This request was rejected.';
+			// this is completed in the business rule "Cascade rejection comment"
+			// so we don't have duplicates for this action
+            break;
+        case "closed_incomplete":
+            current.comments = 'This request was completed unsuccessfully and is no longer active.';
+            break;
+		default: 
+			current.comments = 'This request has completed successfully. No further action is required.';
+			break;
+    }
+    // check current StaticRange
+    // set additional comments based on stage
+    // waiting_for_approval
+    // negotiating_pricing
+    // contract_redlining
+    // security_review
+    // payment_setup
+    // completed
+    // request_rejected
+    // closed_incomplete
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-26 22:36:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3a80677693522690d5ec31697bba10e6</sys_id>
+        <sys_mod_count>31</sys_mod_count>
+        <sys_name>Update Comments by Stage</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_script_3a80677693522690d5ec31697bba10e6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-16 23:10:37</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=3a80677693522690d5ec31697bba10e6"/>
+</record_update>

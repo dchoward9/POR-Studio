@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1118046_partne_0.PartnerFlowUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>PartnerFlowUtil</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var PartnerFlowUtil = Class.create();
+PartnerFlowUtil.prototype = {
+    initialize: function() {
+
+	},
+
+    getFlowData: function(partnerRequestGR) {
+        var hasFlows = false;
+        var hasMultipleFlows = false;
+        var flowId = "";
+
+        if (!partnerRequestGR || !partnerRequestGR.isValidRecord())
+            return {
+                hasFlows: hasFlows,
+                hasMultipleFlows: hasMultipleFlows,
+                flowId: flowId,
+                flowQuery: ""
+            };
+
+        var flowContextGR = new GlideRecord("sys_flow_context");
+        flowContextGR.addQuery("source_table", partnerRequestGR.getRecordClassName());
+        flowContextGR.addQuery("source_record", partnerRequestGR.getUniqueValue());
+        flowContextGR.query();
+        if (flowContextGR.next()) {
+            hasFlows = true;
+            if (!flowContextGR.hasNext())
+                flowId = flowContextGR.getUniqueValue();
+            else
+                hasMultipleFlows = true;
+        }
+
+        return {
+            hasFlows: hasFlows,
+            hasMultipleFlows: hasMultipleFlows,
+            flowId: flowId,
+            flowQuery: flowContextGR.getEncodedQuery()
+        };
+    },
+
+
+    type: 'PartnerFlowUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-21 19:38:04</sys_created_on>
+        <sys_id>aa07efbe93faee50d5ec31697bba1052</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>PartnerFlowUtil</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_script_include_aa07efbe93faee50d5ec31697bba1052</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-21 19:57:06</sys_updated_on>
+    </sys_script_include>
+</record_update>

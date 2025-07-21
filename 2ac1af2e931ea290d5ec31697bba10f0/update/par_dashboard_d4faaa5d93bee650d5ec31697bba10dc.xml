@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard">
+    <par_dashboard action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <certified>false</certified>
+        <description>These leaders need to understand the status of partner onboarding requests originating from their teams.</description>
+        <experience/>
+        <grid>48</grid>
+        <name>POR Manager Dashboard</name>
+        <sys_class_name>par_dashboard</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-16 23:21:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d4faaa5d93bee650d5ec31697bba10dc</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>POR Manager Dashboard</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>par_dashboard_d4faaa5d93bee650d5ec31697bba10dc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-18 01:43:01</sys_updated_on>
+        <sys_ux_app_config/>
+        <sys_ux_app_route/>
+        <sys_ux_macroponent/>
+        <sys_ux_screen/>
+        <sys_ux_screen_type/>
+    </par_dashboard>
+</record_update>

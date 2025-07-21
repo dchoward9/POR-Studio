@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>false</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1118046_partne_0_tasks</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1118046_partne_0_tasks">business_justificationVALCHANGES^ORdescription_of_servicesVALCHANGES^ORpartner_contact_informationVALCHANGES^ORsensitive_data_accessVALCHANGES^ORpartner_full_legal_nameVALCHANGES^ORrequested_byVALCHANGES^ORrequested_forVALCHANGES^EQ<item endquery="false" field="business_justification" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
+            <item endquery="false" field="description_of_services" goto="false" newquery="false" operator="VALCHANGES" or="true" value=""/>
+            <item endquery="false" field="partner_contact_information" goto="false" newquery="false" operator="VALCHANGES" or="true" value=""/>
+            <item endquery="false" field="sensitive_data_access" goto="false" newquery="false" operator="VALCHANGES" or="true" value=""/>
+            <item endquery="false" field="partner_full_legal_name" goto="false" newquery="false" operator="VALCHANGES" or="true" value=""/>
+            <item endquery="false" field="requested_by" goto="false" newquery="false" operator="VALCHANGES" or="true" value=""/>
+            <item endquery="false" field="requested_for" goto="false" newquery="false" operator="VALCHANGES" or="true" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Cascade Partner Information from Parent </name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[// (function executeRule(current, previous /*null when async*/) {
+
+// 	var task = current.sys_id;
+// 	var parent = current.partner_onboarding_request;
+
+// 	var gr = new GlideRecord("x_1118046_partne_0_requests");
+
+// 	if (gr.get(parent)) {
+
+// 		task.partner_full_legal_name = parent.partner_full_legal_name;
+// 		task.partner_contact_information = parent.partner_contact_information;
+// 		task.description_of_services = parent.description_of_services;
+// 		task.business_justification = parent.business_justification;
+// 		task.sensitive_data_access = parent.sensitive_data_access;
+// 		task.requested_by = parent.requested_by;
+// 		task.requested_for = parent.requested_for;
+// 		// task.update();
+//      // test;//
+// 	}
+	
+
+// })(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-26 21:37:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>19339f7293122690d5ec31697bba106d</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Cascade Partner Information from Parent </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_script_19339f7293122690d5ec31697bba106d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-13 01:05:56</sys_updated_on>
+        <template>description_of_servicesSAMEASpartner_onboarding_request.description_of_services^business_justificationSAMEASpartner_onboarding_request.business_justification^partner_contact_informationSAMEASpartner_onboarding_request.partner_contact_information^partner_full_legal_nameSAMEASpartner_onboarding_request.partner_full_legal_name^sensitive_data_accessSAMEASpartner_onboarding_request.sensitive_data_access^requested_bySAMEASpartner_onboarding_request.requested_by^requested_forSAMEASpartner_onboarding_request.requested_for^EQ</template>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=19339f7293122690d5ec31697bba106d"/>
+</record_update>
