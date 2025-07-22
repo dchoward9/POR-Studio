@@ -7,7 +7,7 @@
         <condition/>
         <controlled_by_refs/>
         <decision_type>allow</decision_type>
-        <description>App admin role required to create</description>
+        <description>.</description>
         <local_or_existing>Local</local_or_existing>
         <name>x_1118046_partne_0_requests</name>
         <operation display_value="create">create</operation>
@@ -17,14 +17,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-07 15:09:21</sys_created_on>
         <sys_id>15e3eada932e2a10d5ec31697bba10c9</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>x_1118046_partne_0_requests</sys_name>
         <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
         <sys_update_name>sys_security_acl_15e3eada932e2a10d5ec31697bba10c9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-09 19:47:00</sys_updated_on>
+        <sys_updated_on>2025-07-22 17:13:13</sys_updated_on>
         <type display_value="record">record</type>
     </sys_security_acl>
 </record_update>
