@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_email_template">
+    <sysevent_email_template action="INSERT_OR_UPDATE">
+        <collection>sysapproval_approver</collection>
+        <email_layout/>
+        <message/>
+        <message_html><![CDATA[<p><strong>Partner Onboarding Request: Approval Needed</strong>&nbsp;</p>
+<hr>
+<p>Hi ${approver.first_name},<br><br></p>
+<p>A new partner onboarding request has been submitted and requires your approval to proceed. Please review the details below.</p>
+<div>&nbsp;</div>
+<div><button type="button">${mailto:mailto.approval}</button></div>
+<div>&nbsp;</div>
+<div><button type="button">${mailto:mailto.rejection}</button></div>
+<div>&nbsp;</div>
+<div>
+<div>${mail_script:por_request_summary}</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+</div>
+<div><span style="font-size: 8pt;"><em>You are receiving this email because you are listed as the manager for the "On Behalf Of" user. This approval is the first step in the official onboarding process.</em></span></div>
+<div>&nbsp;</div>
+<div>
+<div><hr></div>
+</div>
+<div>&nbsp;</div>
+<div>Click here to view the approval request: ${URI+&amp;sysparm_record_target=sysapproval_approver}</div>
+<div>Click here to view the request: ${sysapproval.URI}</div>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>POR Approval Request</name>
+        <sms_alternate/>
+        <subject>Action Required: Partner Onboarding Request for ${sysapproval}</subject>
+        <sys_class_name>sysevent_email_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 15:38:56</sys_created_on>
+        <sys_id>3b2dc6bb93f22690d5ec31697bba10a1</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>POR Approval Request</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sysevent_email_template_3b2dc6bb93f22690d5ec31697bba10a1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-25 14:09:07</sys_updated_on>
+        <sys_version>2</sys_version>
+    </sysevent_email_template>
+</record_update>

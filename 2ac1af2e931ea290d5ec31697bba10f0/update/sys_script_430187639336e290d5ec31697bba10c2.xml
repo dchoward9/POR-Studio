@@ -12,15 +12,17 @@
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
         <collection>x_1118046_partne_0_requests</collection>
-        <condition>current.comments &amp;&amp; current.comments.indexOf('DoNotCopy') == -1</condition>
+        <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_1118046_partne_0_requests">commentsVALCHANGES^EQ<item endquery="false" field="comments" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
+        <filter_condition table="x_1118046_partne_0_requests">stateCHANGESTO3^ORstateCHANGESTO4^ORstateCHANGESTO7^EQ<item display_value="Closed Complete" endquery="false" field="state" goto="false" newquery="false" operator="CHANGESTO" or="false" value="3"/>
+            <item display_value="Closed Incomplete" endquery="false" field="state" goto="false" newquery="false" operator="CHANGESTO" or="true" value="4"/>
+            <item display_value="Canceled" endquery="false" field="state" goto="false" newquery="false" operator="CHANGESTO" or="true" value="7"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>PARTREQ comments to PORTASK</name>
+        <name>Update stages for manual REQ closure</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -31,44 +33,39 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
 
-    // if (current.parent) {
-    //     var parentInc = current.parent.getRefRecord();
-    //     if (parentInc.isValidRecord() && parentInc.getTableName() == 'incident') {
-    //         copyWorkNotes(parentInc, current['work_notes']);
-    //     }
-    // }
-    var task = new GlideRecord('x_1118046_partne_0_tasks');
-    task.addEncodedQuery('active=true^partner_onboarding_request=' + current.getUniqueValue());
-    task.query();
-    while (task.next()) {
-		gs.info(task.number);
-        copyComments(task, current.comments);
+    var state = current.state;
+    var stage = current.stage;
+
+    switch (String(state)) {
+        case '4': // closed incomplete
+            current.stage = 'closed_incomplete';
+            break;
+        case '7': // canceled
+            current.stage = 'canceled';
+            break;
+        default: // else, complete
+            current.stage = 'complete';
+            break;
     }
 
-})(current, previous);
-
-function copyComments(taskGr, comments) {
-    /* adding an invisible code snippet that can be detected by the BR condition */
-    taskGr.comments = '[code]<p DoNotCopy></p>[/code]' + comments;
-    taskGr.update();
-}]]></script>
+})(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-07-18 04:20:51</sys_created_on>
+        <sys_created_on>2025-07-24 00:44:49</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>49f870f193fe6a50d5ec31697bba10b3</sys_id>
-        <sys_mod_count>14</sys_mod_count>
-        <sys_name>PARTREQ comments to PORTASK</sys_name>
+        <sys_id>430187639336e290d5ec31697bba10c2</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Update stages for manual REQ closure</sys_name>
         <sys_overrides/>
         <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
-        <sys_update_name>sys_script_49f870f193fe6a50d5ec31697bba10b3</sys_update_name>
+        <sys_update_name>sys_script_430187639336e290d5ec31697bba10c2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-25 15:14:35</sys_updated_on>
+        <sys_updated_on>2025-07-24 00:52:25</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=49f870f193fe6a50d5ec31697bba10b3"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=430187639336e290d5ec31697bba10c2"/>
 </record_update>

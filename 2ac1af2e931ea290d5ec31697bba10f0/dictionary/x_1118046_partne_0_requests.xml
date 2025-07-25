@@ -13,10 +13,11 @@
                 <element inactive_on_update="false" label="Request Rejected" sequence="7" value="request_rejected"/>
                 <element inactive_on_update="false" label="Contract Redlining" sequence="3" value="contract_redlining"/>
                 <element inactive_on_update="false" label="Closed Incomplete" sequence="8" value="closed_incomplete"/>
+                <element inactive_on_update="false" label="Canceled" sequence="9" value="canceled"/>
                 <element inactive_on_update="false" label="Security Review" sequence="4" value="security_review"/>
                 <element inactive_on_update="false" label="Waiting for Approval" sequence="1" value="waiting_for_approval"/>
                 <element inactive_on_update="false" label="Payment Setup" sequence="5" value="payment_setup"/>
-                <element inactive_on_update="false" label="Completed" sequence="6" value="completed"/>
+                <element inactive_on_update="false" label="Complete" sequence="6" value="complete"/>
             </choice>
         </element>
         <element label="Requested By" max_length="32" name="requested_by" read_only="true" reference="sys_user" type="reference"/>

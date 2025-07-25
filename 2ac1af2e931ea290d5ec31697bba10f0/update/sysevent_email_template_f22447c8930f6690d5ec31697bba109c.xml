@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_email_template">
+    <sysevent_email_template action="INSERT_OR_UPDATE">
+        <collection>x_1118046_partne_0_tasks</collection>
+        <email_layout/>
+        <message/>
+        <message_html><![CDATA[<p>Short Description: ${short_description}</p>
+<p>Partner's Name: ${partner_onboarding_request.partner_full_legal_name}</p>
+<p>Requested For: ${partner_onboarding_request.requested_for}</p>
+<p>Click here to view the Request: ${partner_onboarding_request.URI_REF}</p>
+<p>Click here to view Task: ${URI_REF}</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Partner Task Email Assigned Tasks</name>
+        <sms_alternate/>
+        <subject/>
+        <sys_class_name>sysevent_email_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-25 14:15:26</sys_created_on>
+        <sys_id>f22447c8930f6690d5ec31697bba109c</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Partner Task Email Assigned Tasks</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sysevent_email_template_f22447c8930f6690d5ec31697bba109c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-25 14:42:25</sys_updated_on>
+        <sys_version>2</sys_version>
+    </sysevent_email_template>
+</record_update>

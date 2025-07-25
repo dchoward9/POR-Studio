@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="email_access_restriction">
+    <email_access_restriction action="INSERT_OR_UPDATE">
+        <conditions table="sysapproval_approver">approver=javascript:gs.getUserID()^EQ<item endquery="false" field="approver" goto="false" newquery="false" operator="=" or="false" value="javascript:gs.getUserID()"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <description>Limit read access to only the approver</description>
+        <notification display_value="POR Approval Request">1da70e3b93f22690d5ec31697bba10ff</notification>
+        <sys_class_name>email_access_restriction</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 15:15:56</sys_created_on>
+        <sys_id>da380a3b93f22690d5ec31697bba1067</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>1da70e3b93f22690d5ec31697bba10ff</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>email_access_restriction_da380a3b93f22690d5ec31697bba1067</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 15:16:26</sys_updated_on>
+    </email_access_restriction>
+</record_update>

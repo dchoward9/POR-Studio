@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>por_request_summary</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript( /* GlideRecord */ current, /* TemplatePrinter */ template,
+    /* Optional EmailOutbound */
+    email, /* Optional GlideRecord */ email_action,
+    /* Optional GlideRecord */
+    event) {
+
+    // find request
+    // dot walk to each field
+    // add to string
+    // return string
+
+    var lineBreak = '<br>';
+    var message = '<b>Request Details</b>' + lineBreak;
+
+    var gr = new GlideRecord("x_1118046_partne_0_requests");
+    if (gr.get(current.sysapproval)) {
+        message += lineBreak + 'Request Number: ' + gr.number;
+        message += lineBreak + 'Submitted By: ' + gr.requested_by.getDisplayValue();
+        message += lineBreak + gr.requested_for.getLabel() + ': ' + gr.requested_for.getDisplayValue() + lineBreak;
+		message += lineBreak + '<b>Partner Information</b>' + lineBreak;
+        message += lineBreak + gr.partner_full_legal_name.getLabel() + ': ' + gr.partner_full_legal_name + lineBreak;
+        message += lineBreak + gr.partner_contact_information.getLabel() + ': ' + gr.partner_contact_information + lineBreak;
+        message += lineBreak + gr.description_of_services.getLabel() + ': ' + gr.description_of_services + lineBreak;
+        message += lineBreak + gr.business_justification.getLabel() + ': ' + gr.business_justification + lineBreak;
+        message += lineBreak + gr.sensitive_data_access.getLabel() + ': ' + gr.sensitive_data_access;
+
+    }
+
+    template.print(message);
+
+
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-24 16:23:05</sys_created_on>
+        <sys_id>7ad19af393362690d5ec31697bba1081</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>por_request_summary</sys_name>
+        <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
+        <sys_update_name>sys_script_email_7ad19af393362690d5ec31697bba1081</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-24 16:47:14</sys_updated_on>
+    </sys_script_email>
+</record_update>

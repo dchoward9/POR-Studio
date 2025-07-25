@@ -33,35 +33,45 @@
 
     var stage = current.stage;
     var stageName = current.stage.getDisplayValue();
-	//var managerName = current.manager.getDisplayValue();
+    //var managerName = current.manager.getDisplayValue();
 
     switch (String(stage)) {
-		// add a default
+        // add a default
         case 'waiting_for_approval': // the value can be the same as the display value
             current.comments = 'This request is awaiting manager approval.';
+            current.update();
             break;
         case "negotiating_pricing":
             current.comments = 'This request was approved and has moved to the following stage: ' + stageName;
+            current.update();
             break;
         case "contract_redlining":
-		case "security_review":
-		case "payment_setup":
+        case "security_review":
+        case "payment_setup":
             current.comments = 'This request has moved to the following stage: ' + stageName;
+            current.update();
             break;
-        case "completed":
+        case "complete":
             current.comments = 'This request has completed successfully.';
+            current.update();
             break;
         case "request_rejected":
             // current.comments = 'This request was rejected.';
-			// this is completed in the business rule "Cascade rejection comment"
-			// so we don't have duplicates for this action
+            // this is completed in the business rule "Cascade rejection comment"
+            // so we don't have duplicates for this action
             break;
         case "closed_incomplete":
             current.comments = 'This request was completed unsuccessfully and is no longer active.';
+            current.update();
             break;
-		default: 
-			current.comments = 'This request has completed successfully. No further action is required.';
-			break;
+        case "canceled":
+            current.comments = 'This request was canceled and is no longer active.';
+            current.update();
+            break;
+        default:
+            current.comments = 'This request has completed successfully. No further action is required.';
+            current.update();
+            break;
     }
     // check current StaticRange
     // set additional comments based on stage
@@ -81,7 +91,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3a80677693522690d5ec31697bba10e6</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>Update Comments by Stage</sys_name>
         <sys_overrides/>
         <sys_package display_value="Partner Onboarding" source="x_1118046_partne_0">2ac1af2e931ea290d5ec31697bba10f0</sys_package>
@@ -89,9 +99,9 @@
         <sys_scope display_value="Partner Onboarding">2ac1af2e931ea290d5ec31697bba10f0</sys_scope>
         <sys_update_name>sys_script_3a80677693522690d5ec31697bba10e6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-16 23:10:37</sys_updated_on>
+        <sys_updated_on>2025-07-24 01:06:42</sys_updated_on>
         <template/>
-        <when>before</when>
+        <when>async_always</when>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=3a80677693522690d5ec31697bba10e6"/>
 </record_update>
